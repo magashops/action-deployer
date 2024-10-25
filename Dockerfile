@@ -4,7 +4,7 @@ LABEL "repository" = "https://github.com/magashops/action-deployer"
 LABEL "homepage" = "https://github.com/magashops/action-deployer"
 
 LABEL "com.github.actions.name"="LTH - Action Deployer"
-LABEL "com.github.actions.description"="Custom PHP Deployer for GitHub Actions"
+LABEL "com.github.actions.description"="Custom PHP Deployer using GitHub Actions"
 LABEL "com.github.actions.icon"="server"
 LABEL "com.github.actions.color"="yellow"
 

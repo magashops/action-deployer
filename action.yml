@@ -1,0 +1,13 @@
+name: 'LTH - Action Deployer'
+description: 'Custom PHP Deployer using GitHub Actions'
+inputs:
+  args:
+    description: 'Parameters for PHP Deployer binary'
+    required: true
+    default: 'deploy'
+outputs:
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.args }}
