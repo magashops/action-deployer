@@ -24,5 +24,10 @@ ssh-add /tmp/id_rsa
 
 ln -s /root/.composer/vendor/deployer/deployer/bin/dep /usr/local/bin/
 
+whoami
+ls -lah ~/
+ls -lah /github/workspace
+ls -lah /root
+
 dep --version
 dep $CMD_ARGS
