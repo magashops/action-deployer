@@ -1,7 +1,7 @@
 FROM php:8.2-alpine
 
-LABEL "repository" = "https://github.com/magashops/action-deployer"
-LABEL "homepage" = "https://github.com/magashops/action-deployer"
+LABEL "repository"="https://github.com/magashops/action-deployer"
+LABEL "homepage"="https://github.com/magashops/action-deployer"
 
 LABEL "com.github.actions.name"="LTH - Action Deployer"
 LABEL "com.github.actions.description"="Custom PHP Deployer using GitHub Actions"
@@ -17,6 +17,7 @@ RUN apk update --no-cache \
 RUN sed -i -e "s/bin\/ash/bin\/bash/" /etc/passwd
 
 COPY entrypoint.sh /entrypoint.sh
+COPY composer.json /root/.composer/composer.json
 
 RUN chmod +x /entrypoint.sh
 

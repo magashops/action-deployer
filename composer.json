@@ -1,0 +1,13 @@
+{
+  "name": "magashops/action-deployer",
+  "type": "library",
+  "description": "Github Action for LTH Deploys",
+  "require": {},
+  "require-dev": {},
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@github.com:magashops/latiendahome-deploy.git"
+    }
+  ]
+}
