@@ -24,6 +24,7 @@ ssh-add /tmp/id_rsa
 
 mkdir -p /root/.composer
 echo "{\"github-oauth\": {\"github.com\": \"$AUTH_COMPOSER\"} }" > /root/.composer/auth.json
+echo /root/.composer/auth.json
 composer global require magashops/latiendahome-deploy
 
 ln -s /root/.composer/vendor/deployer/deployer/bin/dep /usr/local/bin/
