@@ -5,10 +5,6 @@ inputs:
     description: 'Parameters for PHP Deployer binary'
     required: true
     default: 'deploy'
-  auth_composer:
-    description: 'Auth composer token for use with GitHub OAuth'
-    required: true
-    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
