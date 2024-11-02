@@ -21,6 +21,6 @@ COPY composer.json /root/.composer/composer.json
 
 RUN chmod +x /entrypoint.sh
 
-COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+COPY --from=composer:2.8 /usr/bin/composer /usr/local/bin/composer
 
 ENTRYPOINT ["/entrypoint.sh"]

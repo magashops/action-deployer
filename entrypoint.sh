@@ -27,10 +27,9 @@ mkdir -p $HOME_COMPOSER
 echo "{\"github-oauth\": {\"github.com\": \"$AUTH_COMPOSER\"} }" > $HOME_COMPOSER/auth.json
 cat $HOME_COMPOSER/auth.json
 cp /root/.composer/composer.json $HOME_COMPOSER
-ls -lah $HOME_COMPOSER
 composer global require magashops/latiendahome-deploy
 
-ln -s /root/.composer/vendor/deployer/deployer/bin/dep /usr/local/bin/
+ln -s $HOME_COMPOSER/vendor/deployer/deployer/bin/dep /usr/local/bin/
 
 dep --version
 dep $CMD_ARGS

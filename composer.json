@@ -1,5 +1,6 @@
 {
   "name": "magashops/action-deployer",
+  "version": "v1.1",
   "type": "library",
   "description": "Github Action for LTH Deploys",
   "require": {},
