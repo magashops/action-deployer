@@ -23,11 +23,11 @@ chmod 600 /tmp/id_rsa
 ssh-add /tmp/id_rsa
 
 HOME_COMPOSER="$HOME/.composer"
-echo $HOME
-ls -lah $HOME
 mkdir -p $HOME_COMPOSER
 echo "{\"github-oauth\": {\"github.com\": \"$AUTH_COMPOSER\"} }" > $HOME_COMPOSER/auth.json
 cat $HOME_COMPOSER/auth.json
+cp /root/.composer/composer.json $HOME_COMPOSER
+ls -lah $HOME_COMPOSER
 composer global require magashops/latiendahome-deploy
 
 ln -s /root/.composer/vendor/deployer/deployer/bin/dep /usr/local/bin/
