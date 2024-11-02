@@ -22,6 +22,8 @@ RUN chmod +x /entrypoint.sh
 
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
-RUN composer global require deployer/deployer
+RUN mkdir -p /root/.composer && \
+    echo '{"github-oauth": {"github.com": "$AUTH_COMPOSER"} }' > /root/.composer/auth.json && \
+    composer global require magashops/latiendahome-deploy
 
 ENTRYPOINT ["/entrypoint.sh"]
