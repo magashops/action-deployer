@@ -22,7 +22,7 @@ RUN chmod +x /entrypoint.sh
 
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
-ENV AUTH_COMPOSER=$AUTH_COMPOSER
+ENV AUTH_COMPOSER=$INPUT_AUTH_COMPOSER
 
 RUN mkdir -p /root/.composer && \
     echo "{\"github-oauth\": {\"github.com\": \"$AUTH_COMPOSER\"} }" > /root/.composer/auth.json && \
