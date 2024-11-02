@@ -22,10 +22,9 @@ RUN chmod +x /entrypoint.sh
 
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
-ENV AUTH_COMPOSER=$INPUT_AUTH_COMPOSER
-
 RUN mkdir -p /root/.composer && \
-    echo "{\"github-oauth\": {\"github.com\": \"$AUTH_COMPOSER\"} }" > /root/.composer/auth.json && \
+    echo "{\"github-oauth\": {\"github.com\": \"$INPUT_AUTH_COMPOSER\"} }" > /root/.composer/auth.json && \
+    cat /root/.composer/auth.json && \
     composer global require magashops/latiendahome-deploy
 
 ENTRYPOINT ["/entrypoint.sh"]
