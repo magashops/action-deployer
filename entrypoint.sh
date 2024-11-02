@@ -8,7 +8,7 @@ if [[ -n "$REF" && -n "$SUBSTRING" ]]; then
 fi
 
 if [ -z "$1" ]; then
-    CMD_ARGS=""
+    CMD_ARGS="--version"
 else
     CMD_ARGS="$@"
 fi
@@ -31,5 +31,4 @@ composer global require magashops/latiendahome-deploy
 
 ln -s $HOME_COMPOSER/vendor/deployer/deployer/bin/dep /usr/local/bin/
 
-dep --version
 dep $CMD_ARGS
