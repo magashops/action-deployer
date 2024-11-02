@@ -22,9 +22,12 @@ echo "$SSH_PRIVATE_KEY" | tr -d '\r' > /tmp/id_rsa
 chmod 600 /tmp/id_rsa
 ssh-add /tmp/id_rsa
 
-mkdir -p /root/.composer
-echo "{\"github-oauth\": {\"github.com\": \"$AUTH_COMPOSER\"} }" > /root/.composer/auth.json
-cat /root/.composer/auth.json
+HOME_COMPOSER="$HOME/.composer"
+echo $HOME
+ls -lah $HOME
+mkdir -p $HOME_COMPOSER
+echo "{\"github-oauth\": {\"github.com\": \"$AUTH_COMPOSER\"} }" > $HOME_COMPOSER/auth.json
+cat $HOME_COMPOSER/auth.json
 composer global require magashops/latiendahome-deploy
 
 ln -s /root/.composer/vendor/deployer/deployer/bin/dep /usr/local/bin/

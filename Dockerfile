@@ -18,7 +18,6 @@ RUN sed -i -e "s/bin\/ash/bin\/bash/" /etc/passwd
 
 COPY entrypoint.sh /entrypoint.sh
 COPY composer.json /root/.composer/composer.json
-COPY composer.json /github/home/.composer/composer.json
 
 RUN chmod +x /entrypoint.sh
 
